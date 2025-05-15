@@ -11,10 +11,16 @@ import SMS from "@/app/(modules)/SMS"
 import Email from "@/app/(modules)/Email"
 
 const Portal = () => {
-  const [currentPage, setCurrentPage] = useState("dashbaord")
+  let myPage
+  if (typeof sessionStorage != "undefined") {
+    myPage = sessionStorage.getItem("myPage")
+  }
+
+  const [currentPage, setCurrentPage] = useState(myPage || "dashbaord")
 
   const setPage = (page) => {
     setCurrentPage(page)
+    sessionStorage.setItem("myPage", page)
   }
 
   // custom page
