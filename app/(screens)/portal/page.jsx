@@ -9,6 +9,8 @@ import Dashboard from "@/app/(modules)/Dashboard"
 import Generate from "@/app/(modules)/Generate"
 import SMS from "@/app/(modules)/SMS"
 import Email from "@/app/(modules)/Email"
+import { RiMenu2Fill } from "react-icons/ri"
+import { GoPerson } from "react-icons/go"
 
 const Portal = () => {
   let myPage
@@ -42,7 +44,7 @@ const Portal = () => {
   return (
     <div className="flex bg-[#f9fafd] min-h-screen">
       {/* sidenav */}
-      <div className="flex-[0.2] bg-white p-8 shadow">
+      <div className="flex-[0.2] bg-white p-8 shadow lg:block md:block hidden">
         <Image
           width={100}
           height={100}
@@ -91,9 +93,17 @@ const Portal = () => {
       </div>
 
       {/* rightside content */}
-      <div className="flex-[0.8]">
+      <div className="md:flex-[0.8] lg:flex-[0.8] flex-1">
         {/* top nav */}
-        <div className="h-[10vh] bg-white shadow w-full"></div>
+        <div className="h-[10vh] bg-white shadow w-full flex items-center justify-between px-5">
+          <div>
+            <RiMenu2Fill />
+          </div>
+          <div className="flex items-center gap-2">
+            <p>Veetickets</p>
+            <GoPerson />
+          </div>
+        </div>
 
         {/* content area */}
         <div className="p-6">{customPage()}</div>
