@@ -11,7 +11,7 @@ const Login = () => {
   }
 
   return (
-    <div className="bg-white p-8 rounded-lg shadow-xl flex-col w-[450px]">
+    <div className="bg-white p-8 rounded-lg shadow-xl flex-col md:w-[450px] lg:w-[450px] w-[90%]">
       <div className="flex flex-col items-center mb-6">
         <Image width={150} height={150} alt="logo" src="/images/logo.png" />
         <h1 className="text-3xl font-bold">Events Data Center</h1>
