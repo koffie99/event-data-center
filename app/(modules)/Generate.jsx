@@ -4,6 +4,7 @@ import Image from "next/image"
 import React, { useState } from "react"
 import { FaRegFileAlt } from "react-icons/fa"
 import { MdOutlineFileDownload } from "react-icons/md"
+import { RiFileExcel2Line } from "react-icons/ri"
 
 const Generate = () => {
   const [openGenerateModal, setOpenGenerateModal] = React.useState(false)
@@ -94,8 +95,17 @@ const Generate = () => {
       <Modal
         title="Generated Data"
         open={openGeneratedFileModal}
+        onCancel={() => setOpenGeneratedFileModal(false)}
         footer={false}
       >
+        <div className="border-[1px] border-[#ccc] border-dashed p-4 rounded-lg w-full flex items-center gap-3">
+          <RiFileExcel2Line className="text-3xl" />
+          <div className="flex flex-col">
+            <h2 className="font-semibold">File is ready</h2>
+            <p className="text-sm text-[#818181]">Dowload your file now</p>
+          </div>
+        </div>
+
         {/* footer */}
         <div className="mt-5 flex justify-between">
           <div></div>
